@@ -2,9 +2,9 @@
 110 (20) 
 local.txt X 
 proof.txt X 
-111
-local.txt
-proof.txt
+111 (20)
+local.txt X
+proof.txt X 
 112 (10) 
 local.txt X 
 proof.txt 
@@ -22,4 +22,4 @@ proof.txt X
 
 
 112 is Windows, need find privesc route ?scheduled task maybe 
-111 has known epxloit but not workign with reverse shell 
+111 has known epxloit but not working with reverse shell powershell -e doesnt work but can curl my machine. machine also dies after every execution. 

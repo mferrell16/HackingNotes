@@ -1,0 +1,80 @@
+Winpeas Findings 
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ UAC Status
+È If you are in the Administrators group check how to bypass the UAC https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#from-administrator-medium-to-high-integrity-level--uac-bypasss                                                                                                          
+    ConsentPromptBehaviorAdmin: 5 - PromptForNonWindowsBinaries
+    EnableLUA: 1
+    LocalAccountTokenFilterPolicy: 1
+    FilterAdministratorToken: 
+      [*] LocalAccountTokenFilterPolicy set to 1.
+      [+] Any local account can be used for lateral movement.                                                  
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ PowerShell Settings
+    PowerShell v2 Version: 2.0
+    PowerShell v5 Version: 5.1.17763.1
+    PowerShell Core Version: 
+    Transcription Settings: 
+    Module Logging Settings: 
+    Scriptblock Logging Settings: 
+    PS history file: 
+    PS history size: 
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Drives Information
+È Remember that you should search more info inside the other drives 
+    C:\ (Type: Fixed)(Filesystem: NTFS)(Available space: 27 GB)(Permissions: Users [Allow: AppendData/CreateDirectories])                                                                                                     
+    D:\ (Type: CDRom)
+
+ÉÍÍÍÍÍÍÍÍÍÍ¹ Enumerating Named Pipes
+  Name                                                                                                 CurrentUserPerms                                                       Sddl
+
+  eventlog                                                                                             Everyone [Allow: WriteData/CreateFiles]                                O:LSG:LSD:P(A;;0x12019b;;;WD)(A;;CC;;;OW)(A;;0x12008f;;;S-1-5-80-880578595-1860270145-482643319-2788375705-1540778122)
+
+  ROUTER                                                                                               Everyone [Allow: WriteData/CreateFiles]                                O:SYG:SYD:P(A;;0x12019b;;;WD)(A;;0x12019b;;;AN)(A;;FA;;;SY)
+
+  vgauth-service                                                                                       Everyone [Allow: WriteData/CreateFiles]                                O:BAG:SYD:P(A;;0x12019f;;;WD)(A;;FA;;;SY)(A;;FA;;;BA)
+
+
+    Millewin, operazioni pianificate(Millewin, operazioni pianificate)[C:\Program Files (x86)\Millewin\GestioneTaskService.exe] - Autoload - No quotes and Space detected                                                     
+    File Permissions: Everyone [Allow: AllAccess], jay [Allow: AllAccess], Users [Allow: AllAccess]
+    Possible DLL Hijacking in binary folder: C:\Program Files (x86)\Millewin (Everyone [Allow: AllAccess], Users [Allow: AllAccess], jay [Allow: AllAccess])                    
+
+
+RegPath: HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+    Key: MilleLiveUpdate
+    Folder: C:\Program Files (x86)\Millewin\MilleUpdater
+    FolderPerms: Everyone [Allow: AllAccess], jay [Allow: AllAccess], Users [Allow: AllAccess]
+    File: C:\Program Files (x86)\Millewin\MilleUpdater\MilleUpdater.exe (Unquoted and Space detected) - C:\,C:\Program Files (x86)\Millewin\MilleUpdater                                                                      
+   =================================================================================================
+
+
+    RegPath: HKLM\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run
+    Key: MilleLiveUpdate
+    Folder: C:\Program Files (x86)\Millewin\MilleUpdater
+    FolderPerms: Everyone [Allow: AllAccess], jay [Allow: AllAccess], Users [Allow: AllAccess]
+    File: C:\Program Files (x86)\Millewin\MilleUpdater\MilleUpdater.exe (Unquoted and Space detected) - C:\,C:\Program Files (x86)\Millewin\MilleUpdater                                                                      
+   =================================================================================================
+
+ RegPath: HKLM\Software\Microsoft\Windows NT\CurrentVersion\Winlogon
+    Key: Shell
+    Folder: None (PATH Injection)
+    File: explorer.exe
+   =================================================================================================
+
+
+    RegPath: HKLM\SYSTEM\CurrentControlSet\Control\SafeBoot
+    Key: AlternateShell
+    Folder: None (PATH Injection)
+    File: cmd.exe
+   ===============
+   
+   
+   
+    Folder: C:\windows\tasks
+    FolderPerms: Authenticated Users [Allow: WriteData/CreateFiles]
+   =================================================================================================
+
+
+    Folder: C:\windows\system32\tasks
+    FolderPerms: Authenticated Users [Allow: WriteData/CreateFiles]
+   =================================================================================================
+

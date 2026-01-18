@@ -15,3 +15,4 @@ echo -n "stuff" | iconv -f -UTF-8 -t UTF-16LE | base64
 import base64 
 cmd = 'Write-Output "hello"' 
 print(base64.b64encode(cmd.encode('utf161e')).decode() 
+
