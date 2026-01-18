@@ -16,7 +16,7 @@ whoami /priv
 ![[Screenshot 2026-01-17 at 7.58.25 PM.png]]
 
 SeImpersonate = GodPotato 
-BeichenDream/GodPotato release 4 
+BeichenDream/GodPotato release 4 : https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET4.exe 
 
 upload via evilwinrm shel 
 ![[Screenshot 2026-01-17 at 8.22.34 PM.png]]

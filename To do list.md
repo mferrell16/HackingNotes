@@ -1,14 +1,16 @@
 
-110 
+110 (20) 
 local.txt X 
 proof.txt X 
 111
 local.txt
 proof.txt
-112
+112 (10) 
 local.txt X 
 proof.txt 
 
+
+ADset (40) 
 AD 1 (206) 
 proof.txt X 
 
