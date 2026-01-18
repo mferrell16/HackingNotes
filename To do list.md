@@ -9,15 +9,14 @@ proof.txt
 local.txt X 
 proof.txt 
 
-AD 1 
+AD 1 (206) 
 proof.txt X 
 
-AD2 
-local.txt
-proof.txt
+AD2 (202) 
+proof.txt X 
 
-AD3 
-proof.txt 
+AD3 (200) 
+proof.txt X 
 
 
 112 is Windows, need find privesc route ?scheduled task maybe 
